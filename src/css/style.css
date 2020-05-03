@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+.helpdesk {
+  position: relative;
+  /* display: flex; */
+  max-width: 480px;
+  padding: 15px;
+}
+
+.helpdesk-list_item {
+  position: relative;
+  display: flex;
+  align-items: start;
+  border: 2px solid #87cfeb60;
+  border-radius: 10px;
+  /* box-shadow: 0 0 2px 0 rgba(94, 90, 90, 0.2); */
+  margin: 10px 0;
+  cursor: default;
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
+
+.helpdesk-list_item:hover, .helpdesk-list_item:focus {
+  box-shadow: 0 0 2px 2px rgba(94, 90, 90, 0.2);
+}
+
+.helpdesk-list_item-controll {
+  display: flex;
+  align-items: flex-center;
+  justify-content: center;
+}
+
+.description p {
+  margin: 5px;
+}
+
+.helpdesk-list_item time {
+  align-self: start;
+  margin: 5px;
+}
+
+.button-container {
+  text-align: right;
+}
+
+/* Forms */
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(94, 90, 90, 0.2);
+}
+
+.modal-form {
+  width: 360px;
+  border: 2px solid #87cfeb60;
+  border-radius: 10px;
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.modal-form h2 {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.modal-form input, .modal-form textarea {
+  width: 100%;
+  outline: none;
+  border: 2px solid teal;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.modal-form input:focus, .modal-form textarea:focus {
+  border-color: #7ae0b6;
+}
+
+.modal-form textarea {
+  resize: none;
+  margin-top: 5px;
+}
+
+.modal-form .button-container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Styles */
+.hidden {
+  display: none;
+}
+
+.completed {
+  background-color: rgba(145, 226, 128, 0.411);
+}
+
+.visualy-hidden {
+  position: absolute;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0;
+	border:0;
+	height: 1px; 
+	width: 1px; 
+	overflow: hidden;
+}
+
+.button {
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-with-text {
+  padding: 10px 8px;
+  border: 2px solid #87ceeb;
+  border-radius: 10px;
+  transition: all 0.2s ease-in;
+}
+
+.button-with-text:focus {
+  border: 2px solid #7ae0b6;
+  box-shadow: 0 0 2px 2px rgba(94, 90, 90, 0.2);
+}
+
+.button-with-text:hover {
+  border: 2px solid #7ae0b6;
+  box-shadow: 0 0 2px 2px rgba(94, 90, 90, 0.2);
+}
+
+.button-ico {
+  width: 28px;
+  height: 28px;
+  margin: 10px;
+  border: 2px solid teal;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.button-ico:hover, .button-ico:focus {
+  border-color: #7ae0b6;
+}
+
+.remove {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.danger:hover, .danger:focus {
+  border-color: #b65140;
+}
+
+.remove::before, .remove::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: calc(50% + 1px);
+  background-color: #7ae0b6;
+}
+
+.remove::before {
+  transform: rotate(0deg);
+  transition: all .5s ease-in-out;
+}
+.remove::after {
+  transform: rotate(0deg);
+  transition: all .5s ease-in-out;
+}
+
+.button-ico:hover .remove::before {
+  background-color: teal;
+  transform: rotate(45deg);
+}
+
+.button-ico:hover .remove::after {
+  background-color: teal;
+  transform: rotate(-45deg);
+}
+
+.button-ico:focus .remove::before {
+  background-color: teal;
+  transform: rotate(45deg);
+}
+
+.button-ico:focus .remove::after {
+  background-color: teal;
+  transform: rotate(-45deg);
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit div{
+  min-height: 2px;
+  max-height: 2px;
+  min-width: 18px;
+  background-color: #7ae0b6;
+  margin: 1px auto;
+}
+
+
+.edit:hover div {
+  background: teal;
+}
+
+.edit:focus div {
+  background: teal;
+}
+
+.confirmed {
+  position: relative;
+  display: inline-block;
+  border-color: #7ae0b6;
+}
+
+.confirmed::before {
+  position: absolute;
+  left: 0;
+  top: 35%;
+  height: 50%;
+  width: 3px;
+  background-color:teal;
+  content: "";
+  transform: translateX(10px) rotate(-45deg);
+  transform-origin: left bottom;
+}
+
+.confirmed::after {
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  height: 3px;
+  width: 100%;
+  background-color: teal;
+  content: "";
+  transform: translateX(10px) rotate(-45deg);
+  transform-origin: left bottom;
+}
