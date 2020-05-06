@@ -30,7 +30,7 @@ export default class DataModel {
 
     // console.log(result)
     async getAllTickets() {
-        const response = await fetch('http://localhost:7070/tickets', {
+        const response = await fetch('https://ticket-server-test.herokuapp.com/tickets', {
             method: 'GET',
         });
 
@@ -39,7 +39,7 @@ export default class DataModel {
     }
 
     async getTicket(id) {
-        const response = await fetch(`http://localhost:7070/tickets/:id?id=${id}`, {
+        const response = await fetch(`https://ticket-server-test.herokuapp.com/tickets/:id?id=${id}`, {
             method: 'GET',
         });
 
@@ -48,7 +48,7 @@ export default class DataModel {
     }
 
     async addTicket(data) {
-        const response = await fetch('http://localhost:7070/tickets', {
+        const response = await fetch('https://ticket-server-test.herokuapp.com/tickets', {
             method: 'POST',
             body: data,
         });
@@ -57,7 +57,7 @@ export default class DataModel {
     }
 
     async updateTicket(data) {
-        const response = await fetch('http://localhost:7070/tickets', {
+        const response = await fetch('https://ticket-server-test.herokuapp.com/tickets', {
             method: 'PUT',
             body: data,
         });
@@ -67,7 +67,7 @@ export default class DataModel {
     }
 
     async deleteTicket(id) {
-        const response = await fetch(`http://localhost:7070/tickets/:id?id=${id}`, {
+        const response = await fetch(`https://ticket-server-test.herokuapp.com/tickets/:id?id=${id}`, {
             method: 'DELETE',
         });
 
@@ -76,7 +76,7 @@ export default class DataModel {
     }
 
     async ticketStatusUpdate(id) {
-        const response = await fetch(`http://localhost:7070/tickets/:id?id=${id}`, {
+        const response = await fetch(`https://ticket-server-test.herokuapp.com/tickets/:id?id=${id}`, {
             method: 'PATCH',
         });
 

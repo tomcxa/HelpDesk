@@ -2,7 +2,7 @@
 import ConfirmModal from '../UI/ConfirmModal';
 import AddTicketForm from '../UI/AddTicketForm';
 import EditTicketForm from '../UI/EditTicketForm';
-import { isValidForm } from '../helpers/validForms';
+// import { isValidForm } from '../helpers/validForms';
 
 export default class AppController {
     constructor(view, model) {
