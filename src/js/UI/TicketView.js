@@ -5,18 +5,18 @@ export default class TicketView {
         this.ticketData = ticketData;
     }
 
-    _createTicketHTML() {
-        // const status = this.ticketData.status ? 'completed'
+    static createTicketHTML(ticketData) {
+        console.log(ticketData);
+        const completed = ticketData.status ? ' completed' : '';
         return `
-        <a href="#" class="helpdesk-list_item" data-id="${this.ticketData.id}">
-            <button class="button-ico button" data-type-btn="confirm">
+        <a href="#" class="helpdesk-list_item${completed}" data-ticket-id="${ticketData.id}">
+            <button class="button-ico button${completed}" data-type-btn="confirm">
             </button>
             <div class="description">
-                <p data-name="short-description">${this.ticketData.description.short}</p>
-                <p data-name="full-description" class="hidden">${this.ticketData.description.full}</p>
+                <p data-name="short-description">${ticketData.short}</p>
+                <p data-name="full-description" class="hidden">${ticketData.full}</p>
             </div>
-            <time datetime="${this.ticketData.time}">${this.ticketData.time
-                || new Date().toLocaleString()}</time>
+            <time datetime="${ticketData.time}">${ticketData.time}</time>
             <div class="helpdesk-list_item-controll">
                 <button class="button-ico button edit" data-type-btn="edit">
                     <div></div>
@@ -32,6 +32,6 @@ export default class TicketView {
     }
 
     bindToDOM(container) {
-        container.insertAdjacentHTML('afterbegin', this._createTicketHTML());
+        container.insertAdjacentHTML('afterbegin', TicketView.createTicketHTML(this.ticketData));
     }
 }

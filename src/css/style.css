@@ -13,9 +13,9 @@
   position: relative;
   display: flex;
   align-items: start;
+  justify-content: space-between;
   border: 2px solid #87cfeb60;
   border-radius: 10px;
-  /* box-shadow: 0 0 2px 0 rgba(94, 90, 90, 0.2); */
   margin: 10px 0;
   cursor: default;
   outline: none;
@@ -33,8 +33,20 @@
   justify-content: center;
 }
 
+.description {
+  max-width: 40%;
+}
+
 .description p {
   margin: 5px;
+}
+
+.description [data-name="full-description"] {
+  margin-top: 10px;
+}
+
+time {
+  max-width: 15%;
 }
 
 .helpdesk-list_item time {
@@ -233,13 +245,13 @@
   background: teal;
 }
 
-.confirmed {
+button.completed {
   position: relative;
   display: inline-block;
   border-color: #7ae0b6;
 }
 
-.confirmed::before {
+button.completed::before {
   position: absolute;
   left: 0;
   top: 35%;
@@ -251,7 +263,7 @@
   transform-origin: left bottom;
 }
 
-.confirmed::after {
+button.completed::after {
   position: absolute;
   left: 0;
   bottom: 15%;
