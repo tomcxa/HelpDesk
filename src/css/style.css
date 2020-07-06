@@ -38,6 +38,7 @@
 }
 
 .description p {
+  cursor: pointer;
   margin: 5px;
 }
 
